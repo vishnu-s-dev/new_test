@@ -1,0 +1,30 @@
+You are given an integer N.
+Your task is to find the product of all digits of the given number.
+
+Multiply each digit of the number and print the final product.
+
+Input Format
+
+A single integer N
+
+Output Format
+
+Print an integer representing the product of the digits of N
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+def check(num):
+    product = 1
+
+    if num == 0:
+        return 0
+
+    while num != 0:
+        rem = num % 10
+        product *= rem
+        num //= 10
+
+    return product
+
+/////////////////////////////////////////////////////////////////////////////////////
