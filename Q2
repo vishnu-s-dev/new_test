@@ -1,0 +1,53 @@
+
+Problem Statement
+
+You are given a string S consisting of digits.
+Your task is to remove all occurrences of the digit '7' and the sequence "56" from the string.
+
+After removing:
+
+Every single '7'
+
+Every occurrence of the consecutive digits "56"
+
+print the resulting string.
+///////////////////////////////////////////////////////////////////////////////
+Input Format
+
+A single string S containing digits only.
+
+Output Format
+
+Print the modified string after removing '7' and "56".
+///////////////////////////////////////////////////////////////////////////////
+
+def check(string):
+    result = ""
+    i = 0
+
+    while i < len(string):
+        # skip '7'
+        if string[i] == '7':
+            i += 1
+
+        # skip "56"
+        elif i + 1 < len(string) and string[i] == '5' and string[i + 1] == '6':
+            i += 2
+
+        else:
+            result += string[i]
+            i += 1
+
+    return result
+///////////////////////////////////////////////////////////////////////////////
+
+Edge-case
+""  → ""
+"777" → ""
+"56" → ""
+"5" → "5"
+"6" → "6"
+"7" → ""
+"5566" → "5"
+"1235" → "1235"
+"1756567" → ""
