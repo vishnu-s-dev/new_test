@@ -1,0 +1,27 @@
+Problem Statement
+
+You are given two integers L and U representing a range [L, U] (inclusive).
+Your task is to count how many numbers in this range consist of all unique digits, i.e., no digit is repeated within the number.
+
+Input Format
+
+Two integers L and U
+
+Output Format
+
+Print a single integer representing the count of numbers with all unique digits in the given range.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+def count_unique_digits(lower, upper):
+    count = 0
+
+    for num in range(lower, upper + 1):
+        s = str(num)
+        if len(s) == len(set(s)):
+            count += 1
+
+    return count
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
