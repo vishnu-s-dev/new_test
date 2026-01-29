@@ -1,0 +1,39 @@
+Problem Statement
+
+You are given a string S that consists of alphabetic characters (A–Z, a–z) followed by one or more digits at the end.
+
+Your task is to check whether the number formed by the trailing digits is equal to the length of the alphabetic part of the string.
+
+If the length of the alphabetic characters matches the number at the end → print True
+
+Otherwise → print False
+
+Input
+
+Data10
+
+Explanation
+
+Alphabetic part = "Data"
+
+Length = 4
+
+Number at end = 10
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+def check(string):
+    letters = ""
+    digits = ""
+
+    for char in string:
+        if char.isalpha():
+            letters += char
+        elif char.isdigit():
+            digits += char
+
+    if digits == "":
+        return False
+
+    return len(letters) == int(digits)
+/////////////////////////////////////////////////////////////////////////////////////////
